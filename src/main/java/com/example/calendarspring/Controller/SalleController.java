@@ -20,8 +20,8 @@ private SalleService salleService;
         return salleService.findAll();
     }
     @GetMapping
-    public void findById(int id) {
-        salleService.findById(id);
+    public Salle findById(int id) {
+        return salleService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
     public void delete(Salle o) {

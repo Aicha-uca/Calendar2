@@ -26,8 +26,8 @@ public class ResponsableService implements IDao<Responsable> {
     }
 
     @Override
-    public void findById(int id) {
-        responsableRepository.findById(id);
+    public Responsable findById(int id) {
+        return responsableRepository.findById(id);
     }
 
     @Override

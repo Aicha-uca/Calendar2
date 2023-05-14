@@ -26,8 +26,8 @@ public class NiveauService implements IDao<Niveau> {
     }
 
     @Override
-    public void findById(int id) {
-        niveauRepository.findById(id);
+    public Niveau findById(int id) {
+       return niveauRepository.findById(id);
     }
 
     @Override

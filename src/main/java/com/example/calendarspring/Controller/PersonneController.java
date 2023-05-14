@@ -23,8 +23,8 @@ public class PersonneController {
         return personneService.findAll();
     }
 
-    public void findById(int id) {
-        personneService.findById(id);
+    public Personne findById(int id) {
+       return personneService.findById(id);
     }
 
     public void delete(Personne o) {

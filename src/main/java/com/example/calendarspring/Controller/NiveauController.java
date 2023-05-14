@@ -19,8 +19,8 @@ private NiveauService niveauService;
         return niveauService.findAll();
     }
     @GetMapping
-    public void findById(int id) {
-        niveauService.findById(id);
+    public Niveau findById(int id) {
+       return niveauService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
     public void delete(Niveau o) {

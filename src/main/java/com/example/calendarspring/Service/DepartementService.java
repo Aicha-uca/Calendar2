@@ -24,8 +24,8 @@ public class DepartementService implements IDao<Departement> {
     }
 
     @Override
-    public void findById(int id) {
-        departementRepository.findById(id);
+    public Departement findById(int id) {
+        return departementRepository.findById(id);
     }
 
     @Override

@@ -20,8 +20,8 @@ public class ResponsableController {
         return responsableService.findAll();
     }
     @GetMapping
-    public void findById(int id) {
-        responsableService.findById(id);
+    public Responsable findById(int id) {
+       return responsableService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
     public void delete(Responsable o) {

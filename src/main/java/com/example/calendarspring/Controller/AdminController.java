@@ -24,8 +24,8 @@ public class AdminController {
     }
     @GetMapping
 
-    public void findById(int id) {
-        adminService.findById(id);
+    public Admin findById(int id) {
+       return adminService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
     public void delete(Admin o) {

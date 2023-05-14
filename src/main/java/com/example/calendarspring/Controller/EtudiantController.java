@@ -20,8 +20,8 @@ public class EtudiantController {
         return etudiantService.findAll();
     }
     @GetMapping
-    public void findById(int id) {
-        etudiantService.findById(id);
+    public Etudiant findById(int id) {
+        return etudiantService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
     public void delete(Etudiant o) {

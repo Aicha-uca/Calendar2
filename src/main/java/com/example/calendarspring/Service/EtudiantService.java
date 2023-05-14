@@ -24,8 +24,8 @@ private EtudiantRepository etudiantRepository;
     }
 
     @Override
-    public void findById(int id) {
-        etudiantRepository.findById(id);
+    public Etudiant findById(int id) {
+        return etudiantRepository.findById(id);
     }
 
     @Override

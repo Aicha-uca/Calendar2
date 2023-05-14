@@ -21,8 +21,8 @@ public class ExamController {
         return examenService.findAll();
     }
     @GetMapping
-    public void findById(int id) {
-        examenService.findById(id);
+    public Exam findById(int id) {
+       return examenService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
     public void delete(Exam o) {

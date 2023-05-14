@@ -24,8 +24,8 @@ public class FiliereService implements IDao<Filiere> {
     }
 
     @Override
-    public void findById(int id) {
-    filiereRepository.findById(id);
+    public Filiere findById(int id) {
+    return filiereRepository.findById(id);
 
     }
 

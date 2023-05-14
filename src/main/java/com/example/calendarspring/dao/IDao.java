@@ -7,7 +7,7 @@ public interface IDao<T> {
 
     List<T> findAll();
 
-    void findById(int id);
+    T findById(int id);
 
     void delete(T o);
     public void update(T o);

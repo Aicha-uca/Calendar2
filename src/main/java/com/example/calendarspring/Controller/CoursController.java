@@ -21,8 +21,8 @@ public class CoursController {
         return coursService.findAll();
     }
     @GetMapping
-    public void findById(int id) {
-        coursService.findById(id);
+    public Cours findById(int id) {
+       return coursService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
     public void delete(Cours o) {

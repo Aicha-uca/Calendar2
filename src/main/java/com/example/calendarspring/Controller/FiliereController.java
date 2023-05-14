@@ -21,8 +21,8 @@ public class FiliereController {
         return filiereService.findAll();
     }
 @GetMapping
-    public void findById(int id) {
-        filiereService.findById(id);
+    public Filiere findById(int id) {
+        return filiereService.findById(id);
     }
 @DeleteMapping("/delete/{id}")
     public void delete(Filiere o) {

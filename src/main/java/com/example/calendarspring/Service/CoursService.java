@@ -24,8 +24,9 @@ public class CoursService implements IDao<Cours> {
     }
 
     @Override
-    public void findById(int id) {
-        coursRepository.findById(id);
+    public Cours findById(int id) {
+
+        return coursRepository.findById(id);
     }
 
     @Override

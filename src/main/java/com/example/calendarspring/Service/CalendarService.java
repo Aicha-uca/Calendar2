@@ -23,8 +23,8 @@ public class CalendarService implements IDao<Calendar>{
     }
 
     @Override
-    public void findById(int id) {
-         calendarRepository.findById(id);
+    public Calendar findById(int id) {
+         return calendarRepository.findById(id);
     }
 
     @Override

@@ -23,8 +23,8 @@ public class CalendarController {
         return calendarService.findAll();
     }
     @GetMapping("/id/{id}")
-    public void findById(int id) {
-        calendarService.findById(id);
+    public Calendar findById(int id) {
+        return calendarService.findById(id);
     }
 
     @PutMapping("/update")

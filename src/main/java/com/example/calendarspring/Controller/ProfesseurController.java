@@ -18,8 +18,8 @@ private ProfesseurService professeurService;
         return professeurService.findAll();
     }
     @GetMapping
-    public void findById(int id) {
-        professeurService.findById(id);
+    public Professeur findById(int id) {
+       return professeurService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
     public void delete(Professeur o) {

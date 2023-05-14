@@ -24,8 +24,8 @@ public class SalleService implements IDao<Salle> {
     }
 
     @Override
-    public void findById(int id) {
-        salleRepository.findById(id);
+    public Salle findById(int id) {
+       return salleRepository.findById(id);
     }
 
     @Override

@@ -25,8 +25,8 @@ public class AdminService implements IDao<Admin> {
     }
 
     @Override
-    public void findById(int id) {
-        adminRepository.findById(id);
+    public Admin findById(int id) {
+       return adminRepository.findById(id);
     }
 
     @Override

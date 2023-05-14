@@ -24,8 +24,8 @@ public class PersonneService implements IDao<Personne> {
     }
 
     @Override
-    public void findById(int id) {
-     personneRepository.findById(id);
+    public Personne findById(int id) {
+     return personneRepository.findById(id);
     }
 
     @Override

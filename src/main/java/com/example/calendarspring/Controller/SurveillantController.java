@@ -21,8 +21,8 @@ public class SurveillantController {
         return surveillantService.findAll();
     }
     @GetMapping
-    public void findById(int id) {
-        surveillantService.findById(id);
+    public Surveillant findById(int id) {
+       return surveillantService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
     public void delete(Surveillant o) {

@@ -25,8 +25,8 @@ public class SurveillantService implements IDao<Surveillant> {
     }
 
     @Override
-    public void findById(int id) {
-        surveillantRepository.findById(id);
+    public Surveillant findById(int id) {
+       return surveillantRepository.findById(id);
     }
 
     @Override

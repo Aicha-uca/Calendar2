@@ -24,8 +24,8 @@ public class ExamenService implements IDao<Exam> {
     }
 
     @Override
-    public void findById(int id) {
-        examRepository.findById(id);
+    public Exam findById(int id) {
+        return examRepository.findById(id);
     }
 
     @Override

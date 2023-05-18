@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/calendar")
+@RequestMapping("api/calendars")
 public class CalendarController {
     @Autowired
     CalendarService calendarService;
 
     @PostMapping("/save")
-    public Calendar save(Calendar p) {
+    public Calendar save(@RequestBody Calendar p) {
         return calendarService.save(p);
     }
     @GetMapping("/all")
@@ -23,17 +23,17 @@ public class CalendarController {
         return calendarService.findAll();
     }
     @GetMapping("/id/{id}")
-    public Calendar findById(int id) {
+    public Calendar findById(@PathVariable int id) {
         return calendarService.findById(id);
     }
 
     @PutMapping("/update")
-    public void update(Calendar p) {
+    public void update(@RequestBody Calendar p) {
         calendarService.update(p);
     }
 
     @DeleteMapping("/delete")
-    public void delete(Calendar p) {
+    public void delete(@RequestBody Calendar p) {
         calendarService.delete(p);
     }
 }

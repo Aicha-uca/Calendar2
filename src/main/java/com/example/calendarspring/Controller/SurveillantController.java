@@ -13,17 +13,22 @@ public class SurveillantController {
     @Autowired
     private SurveillantService surveillantService;
     @PostMapping ("/save")
-    public Surveillant save(Surveillant o) {
+    public Surveillant save(@RequestBody Surveillant o) {
         return surveillantService.save(o);
     }
-    @GetMapping ("/")
+    @GetMapping ("/all")
     public List<Surveillant> findAll() {
         return surveillantService.findAll();
     }
-    @GetMapping
-    public Surveillant findById(int id) {
+    @GetMapping("/id/{id}")
+    public Surveillant findById(@PathVariable int id) {
        return surveillantService.findById(id);
     }
+    @PutMapping("/update")
+    public void update(@RequestBody Surveillant o) {
+        surveillantService.update(o);
+    }
+
     @DeleteMapping("/delete/{id}")
     public void delete(Surveillant o) {
         surveillantService.delete(o);

@@ -1,34 +1,39 @@
 package com.example.calendarspring.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-@Entity
-public class Roles {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "roles")
+public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String nom;
+    private Integer id;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20)
+    private ERole name;
 
     public Roles() {
+
     }
 
-    public int getId() {
+    public Roles(ERole name) {
+        this.name = name;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public ERole getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setName(ERole name) {
+        this.name = name;
     }
-
 }

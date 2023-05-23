@@ -12,19 +12,19 @@ public class SalleController {
 @Autowired
 private SalleService salleService;
     @PostMapping ("/save")
-    public Salle save(Salle o) {
+    public Salle save(@RequestBody Salle o) {
         return salleService.save(o);
     }
-    @GetMapping ("/")
+    @GetMapping ("/all")
     public List<Salle> findAll() {
         return salleService.findAll();
     }
-    @GetMapping
-    public Salle findById(int id) {
+    @GetMapping("/update")
+    public Salle findById(@PathVariable int id) {
         return salleService.findById(id);
     }
-    @DeleteMapping("/delete/{id}")
-    public void delete(Salle o) {
+    @DeleteMapping("/delete")
+    public void delete(@RequestBody Salle o) {
         salleService.delete(o);
     }
 }

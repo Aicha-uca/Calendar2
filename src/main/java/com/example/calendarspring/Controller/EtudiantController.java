@@ -12,19 +12,19 @@ public class EtudiantController {
     @Autowired
     private EtudiantService etudiantService;
     @PostMapping ("/save")
-    public Etudiant save(Etudiant o) {
+    public Etudiant save(@RequestBody Etudiant o) {
         return etudiantService.save(o);
     }
     @GetMapping ("/")
     public List<Etudiant> findAll() {
         return etudiantService.findAll();
     }
-    @GetMapping
-    public Etudiant findById(int id) {
+    @GetMapping("/id/{id}")
+    public Etudiant findById(@PathVariable int id) {
         return etudiantService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
-    public void delete(Etudiant o) {
+    public void delete(@RequestBody Etudiant o) {
         etudiantService.delete(o);
     }
 }

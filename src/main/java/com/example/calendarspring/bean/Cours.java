@@ -5,6 +5,8 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Set;
 
 
@@ -16,7 +18,8 @@ public class Cours {
     private int id;
 
     private String nom;
-
+    @ManyToMany(mappedBy = "Cours", fetch= FetchType.EAGER)
+    private Collection<Professeur> professeur= new ArrayList<>();
 
     @ManyToOne
     private Niveau niveau;

@@ -11,19 +11,19 @@ public class NiveauController {
 @Autowired
 private NiveauService niveauService;
     @PostMapping ("/save")
-    public Niveau save(Niveau o) {
+    public Niveau save(@RequestBody Niveau o) {
         return niveauService.save(o);
     }
-    @GetMapping ("/")
+    @GetMapping ("/all")
     public List<Niveau> findAll() {
         return niveauService.findAll();
     }
-    @GetMapping
-    public Niveau findById(int id) {
+    @GetMapping("/id/{id}")
+    public Niveau findById(@PathVariable int id) {
        return niveauService.findById(id);
     }
-    @DeleteMapping("/delete/{id}")
-    public void delete(Niveau o) {
+    @DeleteMapping("/delete")
+    public void delete(@RequestBody Niveau o) {
         niveauService.delete(o);
     }
-}
+ }

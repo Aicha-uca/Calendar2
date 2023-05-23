@@ -9,6 +9,7 @@ import org.hibernate.mapping.Set;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Professeur extends Personne {
@@ -17,7 +18,8 @@ public class Professeur extends Personne {
 
     @ManyToOne
     private Departement departement;
-
+    @ManyToMany(fetch= FetchType.EAGER)
+    private Collection<Cours> cours = new ArrayList<>();
 
     public Professeur(Long id, String nom, String prenom, String tel, String email, String cin, String password) {
         super(id, nom, prenom, tel, email, cin, password);

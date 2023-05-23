@@ -10,19 +10,19 @@ public class ProfesseurController {
 @Autowired
 private ProfesseurService professeurService;
     @PostMapping ("/save")
-    public Professeur save(Professeur o) {
+    public Professeur save(@RequestBody Professeur o) {
         return professeurService.save(o);
     }
-    @GetMapping ("/")
+    @GetMapping ("/all")
     public List<Professeur> findAll() {
         return professeurService.findAll();
     }
-    @GetMapping
-    public Professeur findById(int id) {
+    @GetMapping("/id/{id}")
+    public Professeur findById(@PathVariable int id) {
        return professeurService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
-    public void delete(Professeur o) {
+    public void delete(@RequestBody Professeur o) {
         professeurService.delete(o);
     }
 }

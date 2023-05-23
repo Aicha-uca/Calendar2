@@ -17,7 +17,7 @@ public class AdminController {
     public Admin save(Admin o) {
         return adminService.save(o);
     }
-    @GetMapping ("/")
+    @GetMapping ("/all")
 
     public List<Admin> findAll() {
         return adminService.findAll();

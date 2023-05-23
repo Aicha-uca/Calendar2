@@ -13,19 +13,19 @@ public class ExamController {
     @Autowired
     private ExamenService examenService;
     @PostMapping ("/save")
-    public Exam save(Exam o) {
+    public Exam save(@RequestBody Exam o) {
         return examenService.save(o);
     }
-    @GetMapping ("/")
+    @GetMapping ("/all")
     public List<Exam> findAll() {
         return examenService.findAll();
     }
-    @GetMapping
-    public Exam findById(int id) {
+    @GetMapping("/id/{id}")
+    public Exam findById(@PathVariable int id) {
        return examenService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
-    public void delete(Exam o) {
+    public void delete(@RequestBody Exam o) {
         examenService.delete(o);
     }
 }

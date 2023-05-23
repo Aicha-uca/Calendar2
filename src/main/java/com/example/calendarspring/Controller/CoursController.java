@@ -13,19 +13,19 @@ public class CoursController {
 
     @PostMapping("/save")
 
-    public Cours save(Cours o) {
+    public Cours save(@RequestBody Cours o) {
         return coursService.save(o);
     }
-    @GetMapping ("/")
+    @GetMapping ("/all")
     public List<Cours> findAll() {
         return coursService.findAll();
     }
-    @GetMapping
-    public Cours findById(int id) {
+    @GetMapping("/id/{id}")
+    public Cours findById(@PathVariable int id) {
        return coursService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
-    public void delete(Cours o) {
+    public void delete(@RequestBody Cours o) {
         coursService.delete(o);
     }
 }

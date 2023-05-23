@@ -13,7 +13,7 @@ public class DepartementController {
     @Autowired
     private DepartementService departementService;
     @PostMapping ("/save")
-    public Departement save(Departement o) {
+    public Departement save(@RequestBody Departement o) {
         return departementService.save(o);
     }
     @GetMapping ("/")
@@ -21,11 +21,11 @@ public class DepartementController {
         return departementService.findAll();
     }
     @GetMapping
-    public Departement findById(int id) {
+    public Departement findById(@PathVariable int id) {
        return departementService.findById(id);
     }
     @DeleteMapping("/delete/{id}")
-    public void delete(Departement o) {
+    public void delete(@RequestBody Departement o) {
         departementService.delete(o);
     }
 }

@@ -28,9 +28,8 @@ public class SurveillantController {
     public void update(@RequestBody Surveillant o) {
         surveillantService.update(o);
     }
-
     @DeleteMapping("/delete/{id}")
-    public void delete(Surveillant o) {
+    public void delete(@RequestBody Surveillant o) {
         surveillantService.delete(o);
     }
 }

@@ -15,7 +15,7 @@ public class EtudiantController {
     public Etudiant save(@RequestBody Etudiant o) {
         return etudiantService.save(o);
     }
-    @GetMapping ("/")
+    @GetMapping ("/all")
     public List<Etudiant> findAll() {
         return etudiantService.findAll();
     }

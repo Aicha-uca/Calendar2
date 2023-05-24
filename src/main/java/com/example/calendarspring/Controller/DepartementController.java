@@ -16,11 +16,11 @@ public class DepartementController {
     public Departement save(@RequestBody Departement o) {
         return departementService.save(o);
     }
-    @GetMapping ("/")
+    @GetMapping ("/all")
     public List<Departement> findAll() {
         return departementService.findAll();
     }
-    @GetMapping
+    @GetMapping("/id/{id}")
     public Departement findById(@PathVariable int id) {
        return departementService.findById(id);
     }

@@ -4,6 +4,8 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 public class Etudiant extends Personne {
@@ -20,6 +22,8 @@ public class Etudiant extends Personne {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Filiere filiere;
+    @ManyToMany(fetch= FetchType.EAGER)
+    private Collection<Exam> exams = new ArrayList<>();
 
     public Etudiant(Long id, String nom, String prenom, String tel, String email, String cin, String password, String cne, String niveau) {
         super(id, nom, prenom, tel, email, cin, password);

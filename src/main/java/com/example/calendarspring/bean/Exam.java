@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
 
@@ -21,7 +23,10 @@ public class Exam {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Calendar calendar;
-
+    @ManyToMany(mappedBy = "exams", fetch= FetchType.EAGER)
+    private Collection<Professeur> professeur= new ArrayList<>();
+    @ManyToMany(mappedBy = "exams", fetch= FetchType.EAGER)
+    private Collection<Etudiant> etudiant= new ArrayList<>();
     public Exam() {
     }
     public Date getDate() {

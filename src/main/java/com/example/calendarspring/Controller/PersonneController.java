@@ -3,8 +3,7 @@ package com.example.calendarspring.Controller;
 import com.example.calendarspring.Service.PersonneService;
 import com.example.calendarspring.bean.Personne;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,19 +14,20 @@ public class PersonneController {
     @Autowired
     private PersonneService personneService;
 
-    public Personne save(Personne o) {
+    @PostMapping("/save")
+    public Personne save(@RequestBody Personne o) {
         return personneService.save(o);
     }
-
+    @GetMapping("/all")
     public List<Personne> findAll() {
         return personneService.findAll();
     }
-
-    public Personne findById(int id) {
+    @GetMapping("/id/{id}")
+    public Personne findById(@RequestBody int id) {
        return personneService.findById(id);
     }
-
-    public void delete(Personne o) {
+    @DeleteMapping("/delete/{id}")
+    public void delete(@RequestBody Personne o) {
         personneService.delete(o);
     }
 }

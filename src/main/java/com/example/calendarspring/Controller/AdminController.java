@@ -22,8 +22,7 @@ public class AdminController {
     public List<Admin> findAll() {
         return adminService.findAll();
     }
-    @GetMapping
-
+    @GetMapping("/id/{id}")
     public Admin findById(int id) {
        return adminService.findById(id);
     }

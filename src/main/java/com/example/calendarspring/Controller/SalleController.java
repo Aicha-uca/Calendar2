@@ -19,7 +19,7 @@ private SalleService salleService;
     public List<Salle> findAll() {
         return salleService.findAll();
     }
-    @GetMapping("/update")
+    @GetMapping("/id/{id}")
     public Salle findById(@PathVariable int id) {
         return salleService.findById(id);
     }
